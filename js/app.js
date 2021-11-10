@@ -83,3 +83,38 @@ var non_coastal_cities = cities.filter(coastal_check);
 for (i = 0; i < non_coastal_cities.length; i++) {
     console.log(`${non_coastal_cities[i]['city_name']} is NOT a coastal city with approximately ${non_coastal_cities[i]['population']} citizens`);
 };
+console.dir(document.body);
+
+var first_p_tag = document.querySelector('p');
+first_p_tag.innerText = "I have changed the text!";
+
+var all_p_tags = document.querySelectorAll('p');
+for(var i=0; i < all_p_tags.length; i++) {
+    all_p_tags[i]['style']['color'] = "pink"
+}
+
+var page_title = document.getElementById('page_title');
+page_title['innerText'] = 'Injected Title';
+page_title['style']['fontFamily'] = 'sans-serif';
+
+var page_body = page_title.parentNode;
+var sub_title = document.createElement('h3');
+
+page_body.appendChild(sub_title);
+sub_title['innerText'] = "This is a subtitle";
+
+var orange_tags = document.getElementsByClassName('orange');
+for(var i=0; i<orange_tags.length; i++) {
+    orange_tags[i]['style']['background'] ="orange";
+};
+
+// maybe don't do this!
+// page_body.remove();
+
+var container = document.getElementById('container');
+container.innerHTML = "<h2>Will I be an h2 tag?</h2>";
+container['style']['transition'] = "all 1s ease-in-out";
+container['style']['height'] = '100px';
+
+var images = document.querySelector('img')
+images.setAttribute('https://images.unsplash.com/photo-1498804103079-a6351b050096?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80');
